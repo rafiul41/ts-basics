@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.compileVsRuntimeGetName = exports.takeMultipleParametersAsArray = exports.addStrings = void 0;
+exports.compileVsRuntimeGetNameMoreChecking = exports.compileVsRuntimeGetName = exports.takeMultipleParametersAsArray = exports.addStrings = void 0;
 function addNumber(a, b) {
     return a + b;
 }
@@ -25,3 +25,8 @@ var compileVsRuntimeGetName = function (info) {
     return "".concat(info.firstName, " ").concat(info.lastName);
 };
 exports.compileVsRuntimeGetName = compileVsRuntimeGetName;
+var compileVsRuntimeGetNameMoreChecking = function (info) {
+    var _a, _b;
+    return "".concat((_a = info === null || info === void 0 ? void 0 : info.firstName) !== null && _a !== void 0 ? _a : 'firstName', " ").concat((_b = info === null || info === void 0 ? void 0 : info.lastName) !== null && _b !== void 0 ? _b : 'lastName');
+};
+exports.compileVsRuntimeGetNameMoreChecking = compileVsRuntimeGetNameMoreChecking;

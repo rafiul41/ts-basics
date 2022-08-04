@@ -21,6 +21,14 @@ interface Info {
   lastName: string;
 }
 
+// Below code will not work when undefined is sent as argument after converting it to JS 
+// as during runtime typechecking is done and error shown as undefined
 export const compileVsRuntimeGetName = (info: Info): string => {
   return `${info.firstName} ${info.lastName}`;
+}
+
+
+// The undefined case is handled below 
+export const compileVsRuntimeGetNameMoreChecking = (info: Info): string => {
+  return `${info?.firstName ?? 'firstName'} ${info?.lastName ?? 'lastName'}`;
 }
