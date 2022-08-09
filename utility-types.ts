@@ -67,3 +67,7 @@ const mapId = (users: User[]): UserMap => {
 }
 
 console.log(mapId(users));
+
+// READONLY
+// If we want all the fields to be readonly and thus cannot alter any field value
+type ReadOnlyUser = Readonly<User>;
