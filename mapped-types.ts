@@ -33,6 +33,8 @@ interface DogInfo {
 // Hover on the type below and see it in action !!
 type DogInfoListeners = ListenerType<DogInfo>;
 
+// Aso VSCode will also give suggestions when writing the function name
+// start typing 'on' after the comma on a new line to see it in action
 listenToObjectProperties(dogInfo, {
-  onAgeChange: (newVal: string) => {}
+  onAgeChange: (newVal: string) => {},
 });
