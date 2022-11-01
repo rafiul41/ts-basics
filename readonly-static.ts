@@ -9,6 +9,7 @@
 // A more simpler and newer approach for the above way is below
 // The fields are instantiated in the constructor
 class Dog {
+  // while defining property of classes in constructor access modifier must be given
   constructor(public readonly name: string, public age: number) {}
 }
 
@@ -35,11 +36,16 @@ class DogList {
 
   // Way 2 -- Using the instance of the Class itself
   static addDogs(dog: Dog) {
+    // There can be no this keyword in static methods
+    // as this can be accessed from anywhere
     DogList.instance.dogs.push(dog);
   }
 }
 
 const toAdd = new Dog('hello', 12);
+// No need to create an instance of the class for calling static methods
+// static methods can be called directly from the class like below.
 DogList.addDogs(toAdd);
 
+// the following non-static method is used from the initially created instance
 console.log(DogList.instance.getDogs());
